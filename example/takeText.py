@@ -13,8 +13,18 @@ headers = {
     'Accept': stAccept,
     'User-Agent': stUserAgent
 }
-link = 'https://genius.com/Instasamka-fact-lyrics'
-req = requests.get(link,headers) or print(f'некорректная ссылка {link}')
+
+linkGet = 'https://genius.com/Iasdasdqwe'
+if linkGet == '':
+    link = 'https://genius.com/Instasamka-and-whate-lyrics'
+else:
+    link = linkGet
+
+try:
+    req = requests.get(link,headers) 
+except BaseException:
+    print(f'некорректная ссылка {link}')
+
 
 src = req.text
 
